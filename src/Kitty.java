@@ -12,17 +12,17 @@ public class Kitty {
     private String name;
     private String breed;
     private Colors color;
-    private final Date date;
+    private final Date birthday;
 
     enum Colors {
         BLACK, WHITE, BROWN, GREY, ORANGE, TABBY, CALICO, TORTOISESHELL
     }
 
-    public Kitty(String name, String breed, Colors color, Date date) {
+    public Kitty(String name, String breed, Colors color, Date birthday) {
         this.name = name;
         this.breed = breed;
         this.color = color;
-        this.date = date;
+        this.birthday = birthday;
         System.out.println("Kitty " + this.name + " initialized!");
     }
 
@@ -31,7 +31,7 @@ public class Kitty {
         System.out.println("Name: " + this.name);
         System.out.println("Breed: " + this.breed);
         System.out.println("Color: " + this.color);
-        System.out.println("Date of birth: " + this.date.toString());
+        System.out.println("Date of birth: " + this.birthday.toString());
         System.out.println("----");
     }
 
@@ -41,6 +41,6 @@ public class Kitty {
 
     public int getAge() {
         Date today = new Date();
-        return today.getYear() - this.date.getYear();
+        return today.getYear() - this.birthday.getYear();
     }
 }
