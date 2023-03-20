@@ -1,5 +1,31 @@
 public class Person {
     private String middleName = "Christopher";
+    public static Person kate = null;
+    public static final double PI = 3.14;
+    public static int[] nums; //static variable that will hold great ammount of data
+    //public static int[] nums = initNums(); - same thing, only done through a static method
+
+
+    static {
+        //in here, you can type any code that works with any static variables of the class
+        //runs at class declaration
+        nums = new int[5];
+        nums[0] = 3;
+        nums[1] = 3;
+        nums[2] = 3;
+        nums[3] = 3;
+        nums[4] = 3;
+    }
+
+    public static int[] initNums() {
+        int[] nums = new int[5];
+        nums[0] = 3;
+        nums[1] = 3;
+        nums[2] = 3;
+        nums[3] = 3;
+        nums[4] = 3;
+        return nums;
+    }
 
     public static void main(String[] args) {
         Person p1 = new Person();
@@ -13,6 +39,8 @@ public class Person {
         p1.test2("one", "two", "three", "four");
         p1.test3(1, 2, new String[]{"hello", "friend!"});
         p1.test4(1, 2, "a", "b", "c");
+
+        System.out.println(PI);
     }
 
     public void sayHello() {
