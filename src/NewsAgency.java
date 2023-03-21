@@ -7,8 +7,6 @@ public class NewsAgency {
     String name;
 
     public static void main(String[] args) {
-        Person person = new Person();
-        person.lastName = "Smith";
-        person.dob = LocalDate.now();
+//        Person person = new Person();
     }
 }

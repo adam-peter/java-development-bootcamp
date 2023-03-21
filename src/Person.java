@@ -3,8 +3,50 @@ import java.time.LocalDate;
 public class Person {
     private String firstName;
     private String middleName = "Christopher";
-    public String lastName;
-    protected LocalDate dob;
+    private String lastName;
+    private LocalDate dob;
+
+//    private Person() {} -no-args constructor
+
+    public Person(String firstName, String lastName, LocalDate dob) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = dob;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", middleName='" + middleName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dob=" + dob +
+                '}';
+    }
 
     public void sayHello() {
         System.out.println("Hello from Person!");
@@ -23,14 +65,5 @@ public class Person {
     }
 
     public static void main(String[] args) {
-        Person p1 = new Person();
-        p1.firstName = "Jake"; //main method is a member of Person -> can access private fields
-        p1.lastName = "Smith";
-        p1.sayHello();
-        p1.saySomething("My groovy message!");
-        p1.saySomething("My other message!");
-
-        System.out.println(p1.getMiddleInitial());
-        System.out.println(p1.add(5, 3));
     }
 }
