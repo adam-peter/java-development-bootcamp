@@ -1,4 +1,3 @@
-//public class Person extends Object { - its called implicitly
 public class Person {
     private String middleName = "Christopher";
     public static Person kate = null;
@@ -6,7 +5,7 @@ public class Person {
     public static int[] nums; //static variable that will hold great ammount of data
     //public static int[] nums = initNums(); - same thing, only done through a static method
 
-    
+
     static {
         //in here, you can type any code that works with any static variables of the class
         //runs at class declaration
