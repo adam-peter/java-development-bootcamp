@@ -1,4 +1,6 @@
-import online.shop.Customer;
+import bank.Customer;
+import bank.inner.Bank;
+import bank.inner.BankManager;
 
 import java.util.Arrays;
 
@@ -33,6 +35,20 @@ public class Main {
 
         Car c1 = new Car("Bentley", "Continental GT", 2022, "black");
         System.out.println(c1);
+
+        Bank kb = new Bank("KB", "red");
+        BankManager joe = new BankManager("Joe", "Mother", kb);
+        Customer john = new Customer("John", "Doe", kb);
+
+        joe.managedBank.deposit(1_000_000L, joe);
+        john.usedBank.deposit(1_000_000L, john);
+
+        System.out.println(kb);
+
+        joe.managedBank.withdraw(100_000L, joe);
+        john.usedBank.withdraw(100_000L, john);
+
+        System.out.println(kb);
     }
 
     static String wordJoiner(String... words) {
